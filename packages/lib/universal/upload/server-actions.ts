@@ -131,7 +131,6 @@ const getS3Client = () => {
     process.env.NEXT_PRIVATE_UPLOAD_SECRET_ACCESS_KEY;
 
   return new S3Client({
-    endpoint: process.env.NEXT_PRIVATE_UPLOAD_ENDPOINT || undefined,
     region: process.env.NEXT_PRIVATE_UPLOAD_REGION || 'us-east-1',
     credentials: hasCredentials
       ? {
