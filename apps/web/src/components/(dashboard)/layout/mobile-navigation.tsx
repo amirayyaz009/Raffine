@@ -48,13 +48,7 @@ export const MobileNavigation = ({ isMenuOpen, onMenuOpenChange }: MobileNavigat
     <Sheet open={isMenuOpen} onOpenChange={onMenuOpenChange}>
       <SheetContent className="flex w-full max-w-[400px] flex-col">
         <Link href="/" onClick={handleMenuItemClick}>
-          <Image
-            src={LogoImage}
-            alt="Documenso Logo"
-            className="dark:invert"
-            width={170}
-            height={25}
-          />
+          <Image src={LogoImage} alt="Raffine Logo" width={170} height={25} />
         </Link>
 
         <div className="mt-8 flex w-full flex-col items-start gap-y-4">

@@ -14,16 +14,16 @@ module.exports = {
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+        ring: '#58EAFF',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
+          DEFAULT: '#58EAFF',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          foreground: '#58EAFF',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -35,7 +35,7 @@ module.exports = {
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          foreground: '#58EAFF',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -50,7 +50,7 @@ module.exports = {
           // foreground: 'hsl(var(--widget-foreground))',
         },
         documenso: {
-          DEFAULT: '#A2E771',
+          DEFAULT: '#58EAFF',
           50: '#FFFFFF',
           100: '#FDFFFD',
           200: '#E7F9DA',

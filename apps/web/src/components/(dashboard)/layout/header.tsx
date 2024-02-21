@@ -62,10 +62,10 @@ export const Header = ({ className, user, teams, ...props }: HeaderProps) => {
             href="/"
             className="focus-visible:ring-ring ring-offset-background rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
           >
-            <Logo className="h-6 w-auto" />
+            {/* <Logo className="h-6 w-auto" /> */}
           </Link>
 
-          <DesktopNav />
+          {/* <DesktopNav /> */}
 
           <div className="flex gap-x-4 md:ml-8">
             <ProfileDropdown user={user} />

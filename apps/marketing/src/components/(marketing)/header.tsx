@@ -26,13 +26,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
     <header className={cn('flex items-center justify-between', className)} {...props}>
       <div className="flex items-center space-x-4">
         <Link href="/" className="z-10" onClick={() => setIsHamburgerMenuOpen(false)}>
-          <Image
-            src={LogoImage}
-            alt="Documenso Logo"
-            className="dark:invert"
-            width={170}
-            height={25}
-          />
+          <Image src={LogoImage} alt="Raffine Logo" width={170} height={25} />
         </Link>
 
         {isSinglePlayerModeMarketingEnabled && (
@@ -54,21 +48,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
         </Link>
 
         <Link
-          href="/blog"
-          className="text-muted-foreground hover:text-muted-foreground/80 text-sm font-semibold"
-        >
-          Blog
-        </Link>
-
-        <Link
-          href="/open"
-          className="text-muted-foreground hover:text-muted-foreground/80 text-sm font-semibold"
-        >
-          Open Startup
-        </Link>
-
-        <Link
-          href="https://app.documenso.com/signin"
+          href={process.env.NEXT_PUBLIC_WEBAPP_URL!}
           target="_blank"
           className="text-muted-foreground hover:text-muted-foreground/80 text-sm font-semibold"
         >
