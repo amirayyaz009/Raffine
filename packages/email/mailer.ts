@@ -1,3 +1,4 @@
+import sendGridMail from '@sendgrid/mail';
 import { createTransport } from 'nodemailer';
 
 import { ResendTransport } from '@documenso/nodemailer-resend';
@@ -14,6 +15,19 @@ const getTransport = () => {
         endpoint: process.env.NEXT_PRIVATE_MAILCHANNELS_ENDPOINT,
       }),
     );
+  }
+
+  if (transport === 'sendgrid') {
+    // eslint-disable-next-line turbo/no-undeclared-env-vars
+    sendGridMail.setApiKey(process.env.NEXT_PRIVATE_SENDGRID_API_KEY!);
+    return createTransport({
+      service: 'SendGrid',
+      auth: {
+        user: 'apikey',
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
+        pass: process.env.NEXT_PRIVATE_SENDGRID_API_KEY,
+      },
+    });
   }
 
   if (transport === 'resend') {
