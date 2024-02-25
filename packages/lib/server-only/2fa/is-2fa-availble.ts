@@ -1,4 +1,4 @@
-import { User } from '@documenso/prisma/client';
+import type { User } from '@documenso/prisma/client';
 
 import { DOCUMENSO_ENCRYPTION_KEY } from '../../constants/crypto';
 
@@ -11,7 +11,7 @@ export const isTwoFactorAuthenticationEnabled = ({
 }: IsTwoFactorAuthenticationEnabledOptions) => {
   return (
     user.twoFactorEnabled &&
-    user.identityProvider === 'DOCUMENSO' &&
+    user.identityProvider === 'RAFFINE' &&
     typeof DOCUMENSO_ENCRYPTION_KEY === 'string'
   );
 };

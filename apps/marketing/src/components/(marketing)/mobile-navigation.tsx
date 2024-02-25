@@ -34,11 +34,11 @@ export const MENU_NAVIGATION_LINKS = [
     text: 'Open Startup',
   },
   {
-    href: 'https://status.documenso.com',
+    href: 'https://status.raffine.site',
     text: 'Status',
   },
   {
-    href: 'mailto:support@documenso.com',
+    href: 'mailto:support@raffine.site',
     text: 'Support',
     target: '_blank',
   },
@@ -47,7 +47,7 @@ export const MENU_NAVIGATION_LINKS = [
     text: 'Privacy',
   },
   {
-    href: 'https://app.documenso.com/signin',
+    href: 'https://app.raffine.site/signin',
     text: 'Sign in',
   },
 ];

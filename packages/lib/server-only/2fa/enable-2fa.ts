@@ -17,7 +17,7 @@ export const enableTwoFactorAuthentication = async ({
   code,
   requestMetadata,
 }: EnableTwoFactorAuthenticationOptions) => {
-  if (user.identityProvider !== 'DOCUMENSO') {
+  if (user.identityProvider !== 'RAFFINE') {
     throw new Error(ErrorCode.INCORRECT_IDENTITY_PROVIDER);
   }
 

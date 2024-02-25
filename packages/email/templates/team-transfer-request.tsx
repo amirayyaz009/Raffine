@@ -27,13 +27,13 @@ export type TeamTransferRequestTemplateProps = {
 
 export const TeamTransferRequestTemplate = ({
   assetBaseUrl = 'http://localhost:3002',
-  baseUrl = 'https://documenso.com',
+  baseUrl = 'https://raffine.site',
   senderName = 'John Doe',
   teamName = 'Team Name',
   teamUrl = 'demo',
   token = '',
 }: TeamTransferRequestTemplateProps) => {
-  const previewText = 'Accept team transfer request on Documenso';
+  const previewText = 'Accept team transfer request on Raffine';
 
   return (
     <Html>

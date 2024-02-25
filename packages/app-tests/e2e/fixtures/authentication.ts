@@ -15,7 +15,7 @@ type ManualLoginOptions = {
 
 export const manualLogin = async ({
   page,
-  email = 'example@documenso.com',
+  email = 'example@raffine.site',
   password = 'password',
   redirectPath,
 }: ManualLoginOptions) => {

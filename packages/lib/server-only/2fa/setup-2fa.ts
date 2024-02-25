@@ -15,7 +15,7 @@ type SetupTwoFactorAuthenticationOptions = {
   password: string;
 };
 
-const ISSUER = 'Documenso';
+const ISSUER = 'Raffine';
 
 export const setupTwoFactorAuthentication = async ({
   user,
@@ -27,7 +27,7 @@ export const setupTwoFactorAuthentication = async ({
     throw new Error(ErrorCode.MISSING_ENCRYPTION_KEY);
   }
 
-  if (user.identityProvider !== 'DOCUMENSO') {
+  if (user.identityProvider !== 'RAFFINE') {
     throw new Error(ErrorCode.INCORRECT_IDENTITY_PROVIDER);
   }
 

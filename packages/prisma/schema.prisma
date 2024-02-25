@@ -9,7 +9,7 @@ datasource db {
 }
 
 enum IdentityProvider {
-  DOCUMENSO
+  RAFFINE
   GOOGLE
 }
 
@@ -31,7 +31,7 @@ model User {
   updatedAt            DateTime             @default(now()) @updatedAt
   lastSignedIn         DateTime             @default(now())
   roles                Role[]               @default([USER])
-  identityProvider     IdentityProvider     @default(DOCUMENSO)
+  identityProvider     IdentityProvider     @default(RAFFINE)
   accounts             Account[]
   sessions             Session[]
   Document             Document[]

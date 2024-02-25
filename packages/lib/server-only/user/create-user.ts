@@ -34,7 +34,7 @@ export const createUser = async ({ name, email, password, signature }: CreateUse
       email: email.toLowerCase(),
       password: hashedPassword,
       signature,
-      identityProvider: IdentityProvider.DOCUMENSO,
+      identityProvider: IdentityProvider.RAFFINE,
     },
   });
 

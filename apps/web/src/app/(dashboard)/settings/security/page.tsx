@@ -25,7 +25,7 @@ export default async function SecuritySettingsPage() {
         subtitle="Here you can manage your password and security settings."
       />
 
-      {user.identityProvider === 'DOCUMENSO' ? (
+      {user.identityProvider === 'RAFFINE' ? (
         <div>
           <PasswordForm user={user} />
 
