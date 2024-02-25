@@ -19,7 +19,7 @@ export function generateMetadata({ params: { slug } }: SharePageProps) {
       images: [`/share/${slug}/opengraph`],
     },
     twitter: {
-      site: '@documenso',
+      site: '@raffine',
       card: 'summary_large_image',
       images: [`/share/${slug}/opengraph`],
       description: 'I just signed with Raffine!',

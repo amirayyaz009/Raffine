@@ -19,7 +19,7 @@ export const TemplateFooter = ({ isDocument = true }: TemplateFooterProps) => {
       <Text className="my-8 text-sm text-slate-400">
         Raffine, Inc.
         <br />
-        2261 Market Street, #5211, San Francisco, CA 94114, USA
+        287 25th Street Hatcliffe, Harare, Zimbabwe
       </Text>
     </Section>
   );
