@@ -26,14 +26,16 @@ export const getServerLimits = async ({ email, teamId }: GetServerLimitsOptions)
     throw new Error(ERROR_CODES.UNAUTHORIZED);
   }
 
-  return teamId ? handleTeamLimits({ email, teamId }) : handleUserLimits({ email });
+  // return teamId ? handleTeamLimits({ email, teamId }) : handleUserLimits({ email });
+  return handleUserLimits({ email, teamId });
 };
 
 type HandleUserLimitsOptions = {
   email: string;
+  teamId: number | undefined | null;
 };
 
-const handleUserLimits = async ({ email }: HandleUserLimitsOptions) => {
+const handleUserLimits = async ({ email, teamId }: HandleUserLimitsOptions) => {
   const user = await prisma.user.findFirst({
     where: {
       email,
@@ -78,11 +80,14 @@ const handleUserLimits = async ({ email }: HandleUserLimitsOptions) => {
 
   const documents = await prisma.document.count({
     where: {
-      userId: user.id,
-      teamId: null,
-      createdAt: {
-        gte: DateTime.utc().startOf('month').toJSDate(),
-      },
+      AND: [
+        { OR: [{ userId: user.id }, ...(teamId ? [{ teamId: teamId }] : [])] },
+        {
+          createdAt: {
+            gte: DateTime.utc().startOf('month').toJSDate(),
+          },
+        },
+      ],
     },
   });
 

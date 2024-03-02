@@ -125,13 +125,11 @@ export const UploadDocument = ({ className, team }: UploadDocumentProps) => {
       />
 
       <div className="absolute -bottom-6 right-0">
-        {team?.id === undefined &&
-          remaining.documents > 0 &&
-          Number.isFinite(remaining.documents) && (
-            <p className="text-muted-foreground/60 text-xs">
-              {remaining.documents} of {quota.documents} documents remaining this month.
-            </p>
-          )}
+        {remaining.documents > 0 && Number.isFinite(remaining.documents) && (
+          <p className="text-muted-foreground/60 text-xs">
+            {remaining.documents} of {quota.documents} documents remaining this month.
+          </p>
+        )}
       </div>
 
       {isLoading && (
@@ -140,7 +138,7 @@ export const UploadDocument = ({ className, team }: UploadDocumentProps) => {
         </div>
       )}
 
-      {team?.id === undefined && remaining.documents === 0 && (
+      {remaining.documents === 0 && (
         <div className="bg-background/60 absolute inset-0 flex items-center justify-center rounded-lg backdrop-blur-sm">
           <div className="text-center">
             <h2 className="text-muted-foreground/80 text-xl font-semibold">
