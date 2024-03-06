@@ -11,7 +11,7 @@ type SeedUserOptions = {
 
 export const seedUser = async ({
   name = `user-${Date.now()}`,
-  email = `user-${Date.now()}@test.raffine.site`,
+  email = `user-${Date.now()}@test.raffinedoc.site`,
   password = 'password',
   verified = true,
 }: SeedUserOptions = {}) => {

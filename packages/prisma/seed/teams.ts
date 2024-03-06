@@ -2,7 +2,7 @@ import { prisma } from '..';
 import { TeamMemberInviteStatus, TeamMemberRole } from '../client';
 import { seedUser } from './users';
 
-const EMAIL_DOMAIN = `test.raffine.site`;
+const EMAIL_DOMAIN = `test.raffinedoc.site`;
 
 type SeedTeamOptions = {
   createTeamMembers?: number;

@@ -15,8 +15,8 @@ export type TeamEmailRemovedTemplateProps = {
 
 export const TeamEmailRemovedTemplate = ({
   assetBaseUrl = 'http://localhost:3002',
-  baseUrl = 'https://raffine.site',
-  teamEmail = 'example@raffine.site',
+  baseUrl = 'https://raffinedoc.site',
+  teamEmail = 'example@raffinedoc.site',
   teamName = 'Team Name',
   teamUrl = 'demo',
 }: TeamEmailRemovedTemplateProps) => {

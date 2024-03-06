@@ -33,7 +33,7 @@ export const sendResetPassword = async ({ userId }: SendResetPasswordOptions) =>
     },
     from: {
       name: process.env.NEXT_PRIVATE_SMTP_FROM_NAME || 'Raffine',
-      address: process.env.NEXT_PRIVATE_SMTP_FROM_ADDRESS || 'noreply@raffine.site',
+      address: process.env.NEXT_PRIVATE_SMTP_FROM_ADDRESS || 'noreply@raffinedoc.site',
     },
     subject: 'Password Reset Success!',
     html: render(template),

@@ -162,7 +162,7 @@ test('[TEAMS]: check team documents count with external team email', async ({ pa
   const { team, teamMember2 } = await seedTeamDocuments();
   const { team: team2, teamMember2: team2Member2 } = await seedTeamDocuments();
 
-  const teamEmail = `external-team-email-${team.id}@test.raffine.site`;
+  const teamEmail = `external-team-email-${team.id}@test.raffinedoc.site`;
 
   await seedTeamEmail({
     email: teamEmail,
@@ -275,7 +275,7 @@ test('[TEAMS]: resend pending team document', async ({ page }) => {
   await page.getByRole('row').getByRole('button').nth(1).click();
   await page.getByRole('menuitem', { name: 'Resend' }).click();
 
-  await page.getByLabel('test.raffine.site').first().click();
+  await page.getByLabel('test.raffinedoc.site').first().click();
   await page.getByRole('button', { name: 'Send reminder' }).click();
 
   await expect(page.getByRole('status')).toContainText('Document re-sent');

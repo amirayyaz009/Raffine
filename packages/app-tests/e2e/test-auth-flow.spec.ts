@@ -11,7 +11,7 @@ test.use({ storageState: { cookies: [], origins: [] } });
 test.describe.configure({ mode: 'serial' });
 
 const username = 'Test User';
-const email = 'test-user@auth-flow.raffine.site';
+const email = 'test-user@auth-flow.raffinedoc.site';
 const password = 'Password123#';
 
 test('user can sign up with email and password', async ({ page }: { page: Page }) => {

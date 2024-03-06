@@ -21,7 +21,7 @@ export type ResetPasswordTemplateProps = Partial<TemplateResetPasswordProps>;
 
 export const ResetPasswordTemplate = ({
   userName = 'Lucas Smith',
-  userEmail = 'lucas@raffine.site',
+  userEmail = 'lucas@raffinedoc.site',
   assetBaseUrl = 'http://localhost:3002',
 }: ResetPasswordTemplateProps) => {
   const previewText = `Password Reset Successful`;
@@ -77,7 +77,7 @@ export const ResetPasswordTemplate = ({
                 <Text className="mt-2 text-base text-slate-400">
                   Didn't request a password change? We are here to help you secure your account,
                   just{' '}
-                  <Link className="text-documenso-700 font-normal" href="mailto:hi@raffine.site">
+                  <Link className="text-documenso-700 font-normal" href="mailto:hi@raffinedoc.site">
                     contact us.
                   </Link>
                 </Text>

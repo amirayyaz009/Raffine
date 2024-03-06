@@ -34,11 +34,11 @@ export const MENU_NAVIGATION_LINKS = [
     text: 'Open Startup',
   },
   {
-    href: 'https://status.raffine.site',
+    href: 'https://status.raffinedoc.site',
     text: 'Status',
   },
   {
-    href: 'mailto:support@raffine.site',
+    href: 'mailto:support@raffinedoc.site',
     text: 'Support',
     target: '_blank',
   },
@@ -47,7 +47,7 @@ export const MENU_NAVIGATION_LINKS = [
     text: 'Privacy',
   },
   {
-    href: 'https://app.raffine.site/signin',
+    href: 'https://app.raffinedoc.site/signin',
     text: 'Sign in',
   },
 ];

@@ -82,9 +82,9 @@ export default function PricingPage() {
                 className="text-documenso-700 font-bold"
                 target="_blank"
                 rel="noreferrer"
-                href="mailto:support@raffine.site"
+                href="mailto:support@raffinedoc.site"
               >
-                support@raffine.site{' '}
+                support@raffinedoc.site{' '}
               </Link>
               please message either Lucas or Timur to get added to the channel if you are not
               already a member.

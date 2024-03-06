@@ -26,9 +26,9 @@ export type DocumentInviteEmailTemplateProps = Partial<TemplateDocumentInvitePro
 
 export const DocumentInviteEmailTemplate = ({
   inviterName = 'Lucas Smith',
-  inviterEmail = 'lucas@raffine.site',
+  inviterEmail = 'lucas@raffinedoc.site',
   documentName = 'Open Source Pledge.pdf',
-  signDocumentLink = 'https://raffine.site',
+  signDocumentLink = 'https://raffinedoc.site',
   assetBaseUrl = 'http://localhost:3002',
   customBody,
   role,
