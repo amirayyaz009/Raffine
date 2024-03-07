@@ -1,7 +1,7 @@
 import type Stripe from 'stripe';
 import { z } from 'zod';
 
-import { createTeamCustomer } from '@documenso/ee/server-only/stripe/create-team-customer';
+// import { createTeamCustomer } from '@documenso/ee/server-only/stripe/create-team-customer';
 import { getTeamRelatedPrices } from '@documenso/ee/server-only/stripe/get-team-related-prices';
 import { mapStripeSubscriptionToPrismaUpsertAction } from '@documenso/ee/server-only/stripe/webhook/on-subscription-updated';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
@@ -37,7 +37,7 @@ export type CreateTeamResponse =
     }
   | {
       paymentRequired: true;
-      pendingTeamId: number;
+      // pendingTeamId: number;
     };
 
 /**
@@ -58,7 +58,8 @@ export const createTeam = async ({
   });
 
   let isPaymentRequired = IS_BILLING_ENABLED();
-  let customerId: string | null = null;
+  const customerId = user.customerId;
+  // let customerId: string | null = null;
 
   if (IS_BILLING_ENABLED()) {
     const teamRelatedPriceIds = await getTeamRelatedPrices().then((prices) =>
@@ -67,10 +68,10 @@ export const createTeam = async ({
 
     isPaymentRequired = !subscriptionsContainsActivePlan(user.Subscription, teamRelatedPriceIds);
 
-    customerId = await createTeamCustomer({
-      name: user.name ?? teamName,
-      email: user.email,
-    }).then((customer) => customer.id);
+    // customerId = await createTeamCustomer({
+    //   name: user.name ?? teamName,
+    //   email: user.email,
+    // }).then((customer) => customer.id);
   }
 
   try {
@@ -99,34 +100,34 @@ export const createTeam = async ({
     }
 
     // Create a pending team if payment is required.
-    const pendingTeam = await prisma.$transaction(async (tx) => {
-      const existingTeamWithUrl = await tx.team.findUnique({
-        where: {
-          url: teamUrl,
-        },
-      });
+    // const pendingTeam = await prisma.$transaction(async (tx) => {
+    //   const existingTeamWithUrl = await tx.team.findUnique({
+    //     where: {
+    //       url: teamUrl,
+    //     },
+    //   });
 
-      if (existingTeamWithUrl) {
-        throw new AppError(AppErrorCode.ALREADY_EXISTS, 'Team URL already exists.');
-      }
+    //   if (existingTeamWithUrl) {
+    //     throw new AppError(AppErrorCode.ALREADY_EXISTS, 'Team URL already exists.');
+    //   }
 
-      if (!customerId) {
-        throw new AppError(AppErrorCode.UNKNOWN_ERROR, 'Missing customer ID for pending teams.');
-      }
+    //   if (!customerId) {
+    //     throw new AppError(AppErrorCode.UNKNOWN_ERROR, 'Missing customer ID for pending teams.');
+    //   }
 
-      return await tx.teamPending.create({
-        data: {
-          name: teamName,
-          url: teamUrl,
-          ownerUserId: user.id,
-          customerId,
-        },
-      });
-    });
+    //   return await tx.teamPending.create({
+    //     data: {
+    //       name: teamName,
+    //       url: teamUrl,
+    //       ownerUserId: user.id,
+    //       customerId,
+    //     },
+    //   });
+    // });
 
     return {
       paymentRequired: true,
-      pendingTeamId: pendingTeam.id,
+      // pendingTeamId: pendingTeam.id,
     };
   } catch (err) {
     console.error(err);

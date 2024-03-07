@@ -77,7 +77,14 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
       setOpen(false);
 
       if (response.paymentRequired) {
-        router.push(`/settings/teams?tab=pending&checkout=${response.pendingTeamId}`);
+        toast({
+          title: 'Subscription Required',
+          variant: 'destructive',
+          description:
+            'Oops! The team could not be created. A subscription is required to proceed.',
+          duration: 5000,
+        });
+        router.push(`/settings/billing`);
         return;
       }
 
